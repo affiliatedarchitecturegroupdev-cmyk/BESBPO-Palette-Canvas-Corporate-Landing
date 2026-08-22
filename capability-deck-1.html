@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Capability Deck | Palette Canvas</title>
+<meta name="description" content="Download the Palette Canvas Capability Deck — service portfolio, capacity model, production benchmarks, and pricing tiers, in one document.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%231E1A2E'/%3E%3Ccircle cx='35' cy='35' r='11' fill='%23F0574B'/%3E%3Ccircle cx='65' cy='35' r='11' fill='%23F5A623'/%3E%3Ccircle cx='35' cy='65' r='11' fill='%230FB8A8'/%3E%3Ccircle cx='65' cy='65' r='11' fill='%236A3DE8'/%3E%3C/svg%3E">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+<link rel="manifest" href="/assets/site.webmanifest">
+<meta name="theme-color" content="#1E1A2E">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Palette Canvas">
+<meta property="og:url" content="https://palettecanvas.besbpo.co.za/capability-deck.html">
+<meta property="og:title" content="Palette Canvas — Capability Deck">
+<meta property="og:description" content="Service portfolio, capacity model, production benchmarks, and pricing tiers, in one document.">
+<meta property="og:image" content="https://palettecanvas.besbpo.co.za/assets/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Palette Canvas — Capability Deck">
+<meta name="twitter:description" content="Service portfolio, capacity model, production benchmarks, and pricing tiers, in one document.">
+<meta name="twitter:image" content="https://palettecanvas.besbpo.co.za/assets/og-image.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700;800&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #1E1A2E; --ink-soft: #332C4D; --ink-softer: #4A4368;
+  --violet: #6A3DE8; --violet-deep: #5227C9; --violet-light: #EFE9FC;
+  --coral: #F0574B; --coral-light: #FCEAE8; --teal: #0FB8A8; --teal-light: #E1F7F4;
+  --amber: #F5A623; --amber-deep: #C67D0E; --amber-light: #FDF1DE;
+  --paper: #FBFAFE; --white: #FFFFFF; --grey: #6B6580; --rule: #E4DEF5;
+  --font-display: 'Space Grotesk', 'Poppins', 'Segoe UI', system-ui, sans-serif;
+  --font-body: 'Inter', 'Liberation Sans', 'Segoe UI', system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', 'Liberation Mono', 'Courier New', monospace;
+  --container: 1280px; --radius-s: 10px; --radius-m: 18px; --radius-l: 28px;
+  --shadow-card: 0 10px 40px -12px rgba(30,26,46,0.18);
+  --shadow-lift: 0 20px 60px -15px rgba(30,26,46,0.35);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: var(--font-body); color: var(--ink); background: var(--paper); line-height: 1.6; overflow-x: hidden; }
+.container { max-width: var(--container); margin: 0 auto; padding: 0 24px; }
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; display: block; }
+h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 700; line-height: 1.12; letter-spacing: -0.01em; color: var(--ink); }
+.eyebrow { font-family: var(--font-mono); font-size: 12.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--violet); display: inline-flex; align-items: center; gap: 8px; margin-bottom: 14px; }
+.eyebrow::before { content: ''; width: 18px; height: 2px; background: var(--coral); display: inline-block; }
+.section { padding: 88px 0; }
+@media (min-width: 900px) { .section { padding: 120px 0; } }
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  font-family: var(--font-display); font-weight: 600; font-size: 15px; padding: 15px 28px;
+  border-radius: 999px; transition: all 0.25s ease; cursor: pointer; border: none;
+  word-break: break-word; overflow-wrap: anywhere; max-width: 100%; text-align: center;
+}
+.btn-primary { background: var(--violet); color: #fff; box-shadow: 0 10px 24px -8px rgba(106,61,232,0.5); }
+.btn-primary:hover { background: var(--violet-deep); transform: translateY(-2px); }
+.btn-ghost { background: transparent; border: 1.5px solid var(--rule); color: var(--ink); }
+.btn-ghost:hover { border-color: var(--violet); color: var(--violet); }
+
+/* Header */
+.site-header { position: fixed; top: 0; left: 0; right: 0; z-index: 200; padding: 20px 0; transition: all 0.3s ease; background: transparent; }
+.site-header.is-scrolled { background: rgba(251,250,254,0.92); backdrop-filter: blur(10px); box-shadow: 0 1px 0 var(--rule); padding: 14px 0; }
+.site-header .container { display: flex; align-items: center; justify-content: space-between; }
+.brand { display: flex; align-items: center; gap: 10px; color: var(--white); transition: color 0.3s ease; }
+.is-scrolled .brand { color: var(--ink); }
+.brand-mark { width: 34px; height: 34px; color: currentColor; }
+.brand-word { font-family: var(--font-display); font-weight: 700; font-size: 18px; }
+.main-nav { display: none; gap: 32px; }
+@media (min-width: 900px) { .main-nav { display: flex; } }
+.main-nav a { font-size: 14.5px; font-weight: 500; color: rgba(255,255,255,0.85); transition: color 0.2s ease; }
+.is-scrolled .main-nav a { color: var(--ink-soft); }
+.main-nav a:hover { color: var(--white); }
+.is-scrolled .main-nav a:hover { color: var(--violet); }
+
+/* Hero */
+.deck-hero {
+  position: relative; min-height: 100vh; display: flex; align-items: center; overflow: hidden;
+  background: linear-gradient(160deg, var(--ink) 0%, #2C2350 55%, var(--violet-deep) 100%);
+  padding: 140px 0 80px;
+}
+.deck-hero::before {
+  content: ''; position: absolute; inset: 0;
+  background-image: radial-gradient(circle at 15% 25%, rgba(240,87,75,0.28), transparent 45%),
+                     radial-gradient(circle at 85% 75%, rgba(15,184,168,0.22), transparent 45%);
+}
+.deck-hero .container { position: relative; z-index: 2; }
+.hero-grid { display: grid; grid-template-columns: 1fr; gap: 48px; align-items: start; }
+@media (min-width: 980px) { .hero-grid { grid-template-columns: 1.1fr 0.9fr; gap: 60px; } }
+.hero-dots { display: flex; gap: 10px; margin-bottom: 26px; }
+.hero-dots span { width: 11px; height: 11px; border-radius: 50%; }
+.hero-dots span:nth-child(1) { background: var(--coral); }
+.hero-dots span:nth-child(2) { background: var(--amber); }
+.hero-dots span:nth-child(3) { background: var(--teal); }
+.hero-dots span:nth-child(4) { background: var(--violet); }
+.deck-hero h1 { font-size: clamp(32px, 5.5vw, 52px); color: var(--white); margin-bottom: 20px; }
+.deck-hero h1 .accent { color: var(--amber); }
+.deck-hero .lede { font-size: 17px; color: rgba(255,255,255,0.78); margin-bottom: 32px; max-width: 520px; }
+.whats-inside { list-style: none; display: flex; flex-direction: column; gap: 14px; }
+.whats-inside li { display: flex; gap: 12px; align-items: flex-start; color: rgba(255,255,255,0.85); font-size: 15px; }
+.whats-inside .num { font-family: var(--font-mono); font-size: 12px; color: var(--amber); flex-shrink: 0; padding-top: 2px; }
+
+/* Gate form card */
+.gate-card {
+  background: var(--white); border-radius: var(--radius-l); padding: 36px;
+  box-shadow: var(--shadow-lift); position: relative; z-index: 2;
+}
+.gate-card h2 { font-size: 22px; margin-bottom: 8px; }
+.gate-card .gate-sub { font-size: 14px; color: var(--grey); margin-bottom: 26px; }
+.form-field { display: flex; flex-direction: column; gap: 6px; margin-bottom: 16px; }
+.form-field label { font-family: var(--font-display); font-weight: 600; font-size: 13px; color: var(--ink); }
+.form-field input {
+  font-family: var(--font-body); font-size: 14.5px; color: var(--ink); background: var(--paper);
+  border: 1.5px solid var(--rule); border-radius: var(--radius-s); padding: 11px 14px; transition: border-color 0.2s ease;
+  width: 100%;
+}
+.form-field input:focus { outline: none; border-color: var(--violet); }
+.form-submit-btn { width: 100%; border: none; cursor: pointer; font-size: 15px; padding: 14px 24px; margin-top: 4px; }
+.form-status { margin-top: 14px; font-size: 13.5px; text-align: center; line-height: 1.5; display: none; }
+.form-status.show { display: block; }
+.form-status.ok { color: var(--teal); }
+.form-status.err { color: var(--coral); }
+.gate-note { font-size: 12px; color: var(--grey); margin-top: 18px; text-align: center; line-height: 1.5; }
+.gate-note a { color: var(--violet); text-decoration: underline; }
+
+/* Footer (identical to main site) */
+.site-footer { background: var(--ink); color: rgba(255,255,255,0.7); padding: 64px 0 28px; }
+.footer-top { display: grid; grid-template-columns: 1fr; gap: 40px; padding-bottom: 44px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+@media (min-width: 860px) { .footer-top { grid-template-columns: 1.3fr 1fr 1fr 1fr; gap: 24px; } }
+.footer-brand .brand { margin-bottom: 16px; }
+.footer-brand .brand-word { color: var(--white); }
+.footer-brand p { font-size: 14px; max-width: 320px; color: rgba(255,255,255,0.55); margin-bottom: 22px; }
+.footer-col h4 { font-family: var(--font-display); font-size: 13.5px; letter-spacing: 0.04em; color: var(--white); margin-bottom: 18px; text-transform: uppercase; }
+.footer-sub-label { font-family: var(--font-display); font-size: 11.5px; letter-spacing: 0.05em; color: rgba(255,255,255,0.4); margin: 20px 0 12px; text-transform: uppercase; }
+.footer-col ul { display: flex; flex-direction: column; gap: 12px; list-style: none; }
+.footer-col a, .footer-col span { font-size: 14.5px; color: rgba(255,255,255,0.6); transition: color 0.2s ease; }
+.footer-col a:hover { color: var(--white); }
+.footer-bottom { display: flex; flex-direction: column; gap: 14px; padding-top: 26px; font-size: 13px; color: rgba(255,255,255,0.45); }
+@media (min-width: 700px) { .footer-bottom { flex-direction: row; justify-content: space-between; align-items: center; } }
+.footer-bottom .legal-links { display: flex; gap: 20px; }
+.footer-bottom a:hover { color: rgba(255,255,255,0.75); }
+
+.cookie-banner {
+  position: fixed; left: 16px; right: 16px; bottom: -140px; z-index: 999;
+  max-width: 760px; margin: 0 auto; background: var(--ink); color: rgba(255,255,255,0.85);
+  border-radius: var(--radius-m); box-shadow: var(--shadow-lift); padding: 20px 24px;
+  transition: bottom 0.4s ease;
+}
+.cookie-banner.is-visible { bottom: 20px; }
+.cookie-banner-inner { display: flex; flex-direction: column; gap: 14px; }
+@media (min-width: 640px) { .cookie-banner-inner { flex-direction: row; align-items: center; justify-content: space-between; gap: 24px; } }
+.cookie-banner p { font-size: 13.5px; line-height: 1.5; margin: 0; color: rgba(255,255,255,0.75); }
+.cookie-banner a { color: var(--white); text-decoration: underline; }
+.cookie-banner-actions { display: flex; gap: 10px; flex-shrink: 0; }
+.btn-primary-sm, .btn-ghost-sm {
+  font-family: var(--font-display); font-weight: 600; font-size: 13px; padding: 9px 18px;
+  border-radius: 999px; cursor: pointer; border: none; transition: all 0.2s ease; white-space: nowrap;
+}
+.btn-primary-sm { background: var(--violet); color: #fff; }
+.btn-primary-sm:hover { background: var(--violet-deep); }
+.btn-ghost-sm { background: transparent; border: 1.5px solid rgba(255,255,255,0.3); color: #fff; }
+.btn-ghost-sm:hover { background: rgba(255,255,255,0.08); }
+
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.reveal.is-visible { opacity: 1; transform: translateY(0); }
+</style>
+</head>
+<body>
+
+<header class="site-header" id="siteHeader">
+  <div class="container">
+    <a href="index.html" class="brand" aria-label="Palette Canvas home">
+      <svg class="brand-mark" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect x="7" y="7" width="86" height="86" rx="20" stroke="currentColor" stroke-width="6"/>
+        <circle cx="29" cy="73" r="12" fill="#FBFAFE" stroke="currentColor" stroke-width="6"/>
+        <circle cx="64" cy="31" r="7" fill="#F0574B"/>
+        <circle cx="80" cy="46" r="7" fill="#F5A623"/>
+        <circle cx="75" cy="66" r="7" fill="#0FB8A8"/>
+        <circle cx="55" cy="52" r="7" fill="#6A3DE8"/>
+      </svg>
+      <span class="brand-word">Palette Canvas</span>
+    </a>
+    <nav class="main-nav" aria-label="Primary">
+      <a href="index.html#services">Services</a>
+      <a href="index.html#studio">Studio</a>
+      <a href="index.html#pricing">Pricing</a>
+      <a href="careers.html">Careers</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="deck-hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <div class="hero-dots"><span></span><span></span><span></span><span></span></div>
+        <div class="eyebrow" style="color: var(--amber);">Capability Deck</div>
+        <h1>See exactly how the <span class="accent">capacity works.</span></h1>
+        <p class="lede">Before a first call, see the actual numbers — service portfolio, capacity model, production benchmarks, and pricing, all in one 14-page document.</p>
+        <ul class="whats-inside">
+          <li><span class="num">01</span><span>Positioning &amp; the market Palette Canvas operates in</span></li>
+          <li><span class="num">02</span><span>Full service portfolio and how delivery actually works</span></li>
+          <li><span class="num">03</span><span>Core roles, reporting lines, and the capacity model (173.6 → 137.1 productive hours)</span></li>
+          <li><span class="num">04</span><span>Hiring sequence and management ratio behind the scale</span></li>
+          <li><span class="num">05</span><span>Production time benchmarks — real numbers, not estimates</span></li>
+          <li><span class="num">06</span><span>Pricing tiers per seat/month, plus weekend shift capacity</span></li>
+        </ul>
+      </div>
+
+      <div class="gate-card reveal">
+        <h2>Get the deck</h2>
+        <p class="gate-sub">Enter your details and the download starts immediately.</p>
+        <form id="deckForm" novalidate>
+          <div class="form-field">
+            <label for="d-name">Name*</label>
+            <input type="text" id="d-name" name="name" required autocomplete="name">
+          </div>
+          <div class="form-field">
+            <label for="d-email">Work Email*</label>
+            <input type="email" id="d-email" name="email" required autocomplete="email">
+          </div>
+          <div class="form-field">
+            <label for="d-company">Agency / Company*</label>
+            <input type="text" id="d-company" name="company" required autocomplete="organization">
+          </div>
+          <button type="submit" id="deckSubmit" class="btn btn-primary form-submit-btn">Download the Deck</button>
+          <div id="deckStatus" class="form-status" role="status" aria-live="polite"></div>
+        </form>
+        <p class="gate-note">Your details go straight to Palette Canvas, never sold or shared. See our <a href="privacy.html">Privacy Policy</a>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="index.html" class="brand" aria-label="Palette Canvas home">
+          <svg class="brand-mark" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="7" y="7" width="86" height="86" rx="20" stroke="#FBFAFE" stroke-width="6"/>
+            <circle cx="29" cy="73" r="12" fill="#1E1A2E" stroke="#FBFAFE" stroke-width="6"/>
+            <circle cx="64" cy="31" r="7" fill="#F0574B"/>
+            <circle cx="80" cy="46" r="7" fill="#F5A623"/>
+            <circle cx="75" cy="66" r="7" fill="#0FB8A8"/>
+            <circle cx="55" cy="52" r="7" fill="#6A3DE8"/>
+          </svg>
+          <span class="brand-word">Palette Canvas</span>
+        </a>
+        <p>White-label creative &amp; multimedia production for design, branding, and multimedia agencies — a specialised operating division of BESBPO Group (Pty) Ltd.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="index.html#services">Services</a></li>
+          <li><a href="index.html#group">About BESBPO Group</a></li>
+          <li><a href="careers.html">Careers</a></li>
+          <li><a href="capability-deck.html">Capability Deck</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:info@palettecanvas.besbpo.co.za">info@palettecanvas.besbpo.co.za</a></li>
+          <li><a href="tel:+27872652505">087 265 2505</a></li>
+        </ul>
+        <div class="footer-sub-label">Call locally</div>
+        <ul>
+          <li><a href="tel:+27100166071">Johannesburg — 010 016 6071</a></li>
+          <li><a href="tel:+27210613355">Cape Town — 021 061 3355</a></li>
+          <li><a href="tel:+27310245520">Durban — 031 024 5520</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Palette Canvas — A Specialised Operating Division of BESBPO Group (Pty) Ltd. All rights reserved.</span>
+      <div class="legal-links">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
+        <a href="#" id="cookie-settings-link">Cookie Settings</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<div class="cookie-banner" id="cookie-banner" role="dialog" aria-live="polite" aria-label="Cookie consent">
+  <div class="cookie-banner-inner">
+    <p>We use cookies to understand how this site is used and to improve it. See our <a href="privacy.html">Privacy Policy</a> for details.</p>
+    <div class="cookie-banner-actions">
+      <button type="button" id="cookie-decline" class="btn btn-ghost-sm">Necessary Only</button>
+      <button type="button" id="cookie-accept" class="btn btn-primary-sm">Accept</button>
+    </div>
+  </div>
+</div>
+
+<!-- Cloudflare Web Analytics -->
+<script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "1e4918d10bf945f88585852e5aab3a10"}'></script>
+<!-- End Cloudflare Web Analytics -->
+
+<script>
+(function () {
+  var header = document.getElementById('siteHeader');
+  function onScroll() {
+    if (window.scrollY > 40) header.classList.add('is-scrolled');
+    else header.classList.remove('is-scrolled');
+  }
+  window.addEventListener('scroll', onScroll);
+  onScroll();
+
+  var revealEls = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) { entry.target.classList.add('is-visible'); io.unobserve(entry.target); }
+      });
+    }, { threshold: 0.15 });
+    revealEls.forEach(function (el) { io.observe(el); });
+    setTimeout(function () { revealEls.forEach(function (el) { el.classList.add('is-visible'); }); }, 4000);
+  } else {
+    revealEls.forEach(function (el) { el.classList.add('is-visible'); });
+  }
+})();
+
+/* Cookie consent */
+(function () {
+  var KEY = 'pc_cookie_consent';
+  var banner = document.getElementById('cookie-banner');
+  if (!banner) return;
+  var stored;
+  try { stored = localStorage.getItem(KEY); } catch (e) { stored = null; }
+  if (!stored) { setTimeout(function () { banner.classList.add('is-visible'); }, 600); }
+  function setConsent(value) {
+    try { localStorage.setItem(KEY, value); } catch (e) {}
+    banner.classList.remove('is-visible');
+  }
+  var acceptBtn = document.getElementById('cookie-accept');
+  var declineBtn = document.getElementById('cookie-decline');
+  if (acceptBtn) acceptBtn.addEventListener('click', function () { setConsent('accepted'); });
+  if (declineBtn) declineBtn.addEventListener('click', function () { setConsent('declined'); });
+  var settingsLink = document.getElementById('cookie-settings-link');
+  if (settingsLink) settingsLink.addEventListener('click', function (e) { e.preventDefault(); banner.classList.add('is-visible'); });
+})();
+
+/* Gated deck download — Formspree lead capture + immediate client-side download,
+   released whether or not the Formspree notification succeeds, since the point
+   of this page is the deck reaching the person who asked for it. */
+(function () {
+  var form = document.getElementById('deckForm');
+  if (!form) return;
+  var FORMSPREE_ENDPOINT = 'https://formspree.io/f/mppakado';
+  var RECIPIENT = 'info@palettecanvas.besbpo.co.za';
+  var DECK_PATH = 'assets/Palette_Canvas_Capability_Deck.pdf';
+  var DECK_FILENAME = 'Palette_Canvas_Capability_Deck.pdf';
+
+  function triggerDownload() {
+    var a = document.createElement('a');
+    a.href = DECK_PATH;
+    a.download = DECK_FILENAME;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+  }
+
+  function notifyByMailto(payload) {
+    var subject = encodeURIComponent('Capability Deck Download — ' + payload.name + ' (' + payload.company + ')');
+    var body = encodeURIComponent(
+      'Name: ' + payload.name + '\n' +
+      'Email: ' + payload.email + '\n' +
+      'Agency/Company: ' + payload.company + '\n\n' +
+      '(Sent automatically after a deck download attempt — Formspree notification failed.)'
+    );
+    var mailtoLink = document.createElement('a');
+    mailtoLink.href = 'mailto:' + RECIPIENT + '?subject=' + subject + '&body=' + body;
+    mailtoLink.style.display = 'none';
+    document.body.appendChild(mailtoLink);
+    mailtoLink.click();
+    document.body.removeChild(mailtoLink);
+  }
+
+  form.addEventListener('submit', async function (e) {
+    e.preventDefault();
+
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
+
+    var status = document.getElementById('deckStatus');
+    var btn = document.getElementById('deckSubmit');
+    var payload = {
+      name: document.getElementById('d-name').value,
+      email: document.getElementById('d-email').value,
+      company: document.getElementById('d-company').value
+    };
+
+    var originalBtnText = btn.textContent;
+    btn.textContent = 'Preparing your download…';
+    btn.disabled = true;
+
+    try {
+      var res = await fetch(FORMSPREE_ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({
+          name: payload.name,
+          email: payload.email,
+          company: payload.company,
+          _subject: 'Capability Deck Download — ' + payload.name + ' (' + payload.company + ')'
+        })
+      });
+      if (!res.ok) throw new Error('Request failed');
+      status.textContent = 'Thanks — your download has started.';
+      status.className = 'form-status show ok';
+    } catch (err) {
+      notifyByMailto(payload);
+      status.textContent = 'Your download has started. (Lead notification used a fallback — no action needed on your end.)';
+      status.className = 'form-status show ok';
+    } finally {
+      triggerDownload();
+      btn.textContent = originalBtnText;
+      btn.disabled = false;
+      form.reset();
+    }
+  });
+})();
+</script>
+
+</body>
+</html>
