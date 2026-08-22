@@ -1,0 +1,1270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Palette Canvas — White-Label Creative & Multimedia Production | BESBPO Group</title>
+<meta name="description" content="Palette Canvas is BESBPO Group's white-label creative and multimedia production division — extra design, branding, and video capacity for agencies, delivered under your name.">
+
+<!-- Social share preview (Open Graph + Twitter Card) -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Palette Canvas">
+<meta property="og:url" content="https://palettecanvas.besbpo.co.za/">
+<meta property="og:title" content="Palette Canvas — White-Label Creative & Multimedia Production">
+<meta property="og:description" content="Extra design, branding, and video capacity for agencies — delivered under your name. A specialised operating division of BESBPO Group.">
+<meta property="og:image" content="https://palettecanvas.besbpo.co.za/assets/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Palette Canvas — Extra creative capacity. Under your name.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Palette Canvas — White-Label Creative & Multimedia Production">
+<meta name="twitter:description" content="Extra design, branding, and video capacity for agencies — delivered under your name.">
+<meta name="twitter:image" content="https://palettecanvas.besbpo.co.za/assets/og-image.jpg">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%231E1A2E'/%3E%3Ccircle cx='35' cy='35' r='11' fill='%23F0574B'/%3E%3Ccircle cx='65' cy='35' r='11' fill='%23F5A623'/%3E%3Ccircle cx='35' cy='65' r='11' fill='%230FB8A8'/%3E%3Ccircle cx='65' cy='65' r='11' fill='%236A3DE8'/%3E%3C/svg%3E">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+<link rel="manifest" href="/assets/site.webmanifest">
+<meta name="theme-color" content="#1E1A2E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700;800&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   PALETTE CANVAS — DESIGN TOKENS
+   ============================================================ */
+:root {
+  --ink: #1E1A2E;
+  --ink-soft: #332C4D;
+  --ink-softer: #4A4368;
+  --violet: #6A3DE8;
+  --violet-deep: #5227C9;
+  --violet-light: #EFE9FC;
+  --coral: #F0574B;
+  --coral-light: #FCEAE8;
+  --teal: #0FB8A8;
+  --teal-light: #E1F7F4;
+  --amber: #F5A623;
+  --amber-deep: #C67D0E;
+  --amber-light: #FDF1DE;
+  --paper: #FBFAFE;
+  --white: #FFFFFF;
+  --grey: #6B6580;
+  --rule: #E4DEF5;
+
+  --font-display: 'Space Grotesk', 'Poppins', 'Segoe UI', system-ui, sans-serif;
+  --font-body: 'Inter', 'Liberation Sans', 'Segoe UI', system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', 'Liberation Mono', 'Courier New', monospace;
+
+  --container: 1280px;
+  --radius-s: 10px;
+  --radius-m: 18px;
+  --radius-l: 28px;
+  --shadow-card: 0 10px 40px -12px rgba(30,26,46,0.18);
+  --shadow-lift: 0 20px 60px -15px rgba(30,26,46,0.35);
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: local('Poppins');
+  font-weight: 400 800;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--paper);
+  color: var(--ink);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+ul { list-style: none; }
+button { font: inherit; cursor: pointer; border: none; background: none; color: inherit; }
+
+.container { max-width: var(--container); margin: 0 auto; padding: 0 20px; }
+@media (min-width: 768px) { .container { padding: 0 40px; } }
+@media (min-width: 1400px) { .container { padding: 0 24px; } }
+
+h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 700; line-height: 1.12; letter-spacing: -0.01em; color: var(--ink); }
+
+.eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: var(--font-display); font-weight: 700; font-size: 12px;
+  letter-spacing: 0.14em; text-transform: uppercase; color: var(--violet);
+  margin-bottom: 14px;
+}
+.eyebrow::before { content: ''; width: 22px; height: 2px; background: var(--coral); display: inline-block; border-radius: 2px; }
+
+.section { padding: 72px 0; position: relative; }
+@media (min-width: 900px) { .section { padding: 120px 0; } }
+
+.section-head { max-width: 680px; margin-bottom: 48px; }
+.section-head.center { margin-left: auto; margin-right: auto; text-align: center; }
+.section-head h2 { font-size: clamp(28px, 5vw, 46px); margin-bottom: 16px; }
+.section-head p { font-size: 17px; color: var(--grey); line-height: 1.6; }
+
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  padding: 16px 30px; border-radius: 100px; font-family: var(--font-display);
+  font-weight: 600; font-size: 15px; transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+  word-break: break-word; overflow-wrap: anywhere; max-width: 100%; text-align: center;
+}
+.btn-primary { background: var(--violet); color: var(--white); box-shadow: 0 12px 30px -8px rgba(106,61,232,0.55); }
+.btn-primary:hover { background: var(--violet-deep); transform: translateY(-2px); box-shadow: 0 16px 36px -8px rgba(106,61,232,0.65); }
+.btn-ghost { background: rgba(255,255,255,0.12); color: var(--white); border: 1.5px solid rgba(255,255,255,0.5); backdrop-filter: blur(6px); }
+.btn-ghost:hover { background: rgba(255,255,255,0.22); transform: translateY(-2px); }
+.btn-dark { background: var(--ink); color: var(--white); }
+.btn-dark:hover { background: var(--ink-soft); transform: translateY(-2px); }
+.btn:focus-visible { outline: 3px solid var(--amber); outline-offset: 3px; }
+
+.dots-row { display: flex; gap: 8px; }
+.dots-row span { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+.dots-row span:nth-child(1) { background: var(--coral); }
+.dots-row span:nth-child(2) { background: var(--amber); }
+.dots-row span:nth-child(3) { background: var(--teal); }
+.dots-row span:nth-child(4) { background: var(--violet); }
+
+.reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s cubic-bezier(.16,.8,.3,1), transform 0.7s cubic-bezier(.16,.8,.3,1); }
+.reveal.is-visible { opacity: 1; transform: translateY(0); }
+.reveal-stagger > * { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.reveal-stagger.is-visible > * { opacity: 1; transform: translateY(0); }
+.reveal-stagger.is-visible > *:nth-child(1) { transition-delay: 0.05s; }
+.reveal-stagger.is-visible > *:nth-child(2) { transition-delay: 0.15s; }
+.reveal-stagger.is-visible > *:nth-child(3) { transition-delay: 0.25s; }
+.reveal-stagger.is-visible > *:nth-child(4) { transition-delay: 0.35s; }
+.reveal-stagger.is-visible > *:nth-child(5) { transition-delay: 0.45s; }
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+.site-header {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  padding: 18px 0;
+  transition: background 0.35s ease, padding 0.35s ease, box-shadow 0.35s ease;
+}
+.site-header .container { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+.site-header.is-scrolled { background: rgba(251,250,254,0.92); backdrop-filter: blur(14px); padding: 12px 0; box-shadow: 0 4px 24px -8px rgba(30,26,46,0.15); }
+
+.brand { display: flex; align-items: center; gap: 12px; }
+.brand-mark { width: 42px; height: 42px; flex-shrink: 0; }
+.brand-word { font-family: var(--font-display); font-weight: 800; font-size: 19px; letter-spacing: -0.01em; color: var(--white); transition: color 0.35s ease; }
+.site-header.is-scrolled .brand-word { color: var(--ink); }
+
+.main-nav { display: none; align-items: center; gap: 8px; }
+.main-nav a {
+  font-family: var(--font-display); font-weight: 600; font-size: 14.5px;
+  color: rgba(255,255,255,0.88); padding: 10px 16px; border-radius: 100px; transition: all 0.25s ease;
+}
+.site-header.is-scrolled .main-nav a { color: var(--ink-soft); }
+.main-nav a:hover { background: rgba(255,255,255,0.14); color: var(--white); }
+.site-header.is-scrolled .main-nav a:hover { background: var(--violet-light); color: var(--violet); }
+@media (min-width: 980px) { .main-nav { display: flex; } }
+
+.header-cta { display: none; }
+@media (min-width: 980px) { .header-cta { display: inline-flex; padding: 12px 24px; font-size: 14px; } }
+
+.nav-toggle {
+  display: flex; flex-direction: column; justify-content: center; gap: 5px;
+  width: 42px; height: 42px; border-radius: 50%; background: rgba(255,255,255,0.14);
+}
+.site-header.is-scrolled .nav-toggle { background: var(--violet-light); }
+.nav-toggle span { width: 20px; height: 2px; background: var(--white); margin: 0 auto; border-radius: 2px; transition: all 0.3s ease; }
+.site-header.is-scrolled .nav-toggle span { background: var(--ink); }
+@media (min-width: 980px) { .nav-toggle { display: none; } }
+
+.mobile-nav {
+  position: fixed; inset: 0; background: var(--ink); z-index: 1100;
+  display: flex; flex-direction: column; padding: 100px 32px 40px;
+  transform: translateX(100%); transition: transform 0.4s cubic-bezier(.16,.8,.3,1);
+}
+.mobile-nav.is-open { transform: translateX(0); }
+.mobile-nav a { font-family: var(--font-display); font-weight: 700; font-size: 28px; color: var(--white); padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,0.1); }
+.mobile-nav .btn { margin-top: 28px; }
+.mobile-close { position: absolute; top: 24px; right: 24px; width: 44px; height: 44px; border-radius: 50%; background: rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; color: var(--white); font-size: 22px; }
+
+/* ============================================================
+   HERO SLIDER
+   ============================================================ */
+.hero {
+  position: relative; height: 100svh; min-height: 620px; max-height: 980px;
+  overflow: hidden; display: flex; align-items: flex-end; color: var(--white);
+}
+.hero-slides { position: absolute; inset: 0; }
+.hero-slide {
+  position: absolute; inset: 0; opacity: 0; transition: opacity 1.4s ease;
+  background-size: cover; background-position: center;
+}
+.hero-slide.is-active { opacity: 1; }
+.hero-slide::after {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(30,26,46,0.55) 0%, rgba(30,26,46,0.35) 38%, rgba(30,26,46,0.88) 100%);
+}
+.hero-slide::before {
+  content: ''; position: absolute; inset: 0; z-index: 1;
+  background: radial-gradient(ellipse at 20% 100%, rgba(106,61,232,0.35), transparent 60%);
+}
+
+.hero-content { position: relative; z-index: 5; width: 100%; padding: 0 20px 64px; }
+@media (min-width: 768px) { .hero-content { padding: 0 40px 96px; } }
+.hero-content .container { display: flex; flex-direction: column; gap: 26px; }
+.hero-tag { display: flex; align-items: center; gap: 14px; }
+.hero-tag .label { font-family: var(--font-mono); font-size: 12.5px; letter-spacing: 0.08em; color: rgba(255,255,255,0.75); text-transform: uppercase; }
+.hero h1 {
+  font-size: clamp(34px, 7.2vw, 78px); font-weight: 800; color: var(--white);
+  max-width: 18ch; letter-spacing: -0.02em;
+}
+.hero h1 em { font-style: normal; color: var(--amber); }
+.hero p.lede { font-size: clamp(15px, 2vw, 19px); max-width: 52ch; color: rgba(255,255,255,0.86); }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 6px; }
+
+.hero-nav {
+  position: absolute; bottom: 30px; right: 20px; z-index: 6;
+  display: flex; align-items: center; gap: 14px;
+}
+@media (min-width: 768px) { .hero-nav { right: 40px; bottom: 40px; } }
+.hero-arrow {
+  width: 46px; height: 46px; border-radius: 50%; border: 1.5px solid rgba(255,255,255,0.45);
+  display: flex; align-items: center; justify-content: center; color: var(--white); transition: all 0.25s ease;
+}
+.hero-arrow:hover { background: var(--white); color: var(--ink); }
+.hero-dots { display: none; gap: 8px; }
+@media (min-width: 640px) { .hero-dots { display: flex; } }
+.hero-dots button { width: 9px; height: 9px; border-radius: 50%; background: rgba(255,255,255,0.4); transition: all 0.3s ease; }
+.hero-dots button.is-active { background: var(--amber); width: 26px; border-radius: 6px; }
+
+.hero-scroll-cue {
+  position: absolute; left: 20px; bottom: 34px; z-index: 6; display: none;
+  flex-direction: column; align-items: center; gap: 8px; color: rgba(255,255,255,0.75);
+}
+@media (min-width: 768px) { .hero-scroll-cue { display: flex; left: 40px; } }
+.hero-scroll-cue .line { width: 1.5px; height: 34px; background: linear-gradient(180deg, var(--amber), transparent); animation: scrollcue 1.8s ease-in-out infinite; }
+@keyframes scrollcue { 0%,100% { transform: scaleY(0.5); opacity: 0.5; } 50% { transform: scaleY(1); opacity: 1; } }
+
+/* ============================================================
+   STAT STRIP
+   ============================================================ */
+.stat-strip { background: var(--ink); color: var(--white); padding: 40px 0; position: relative; overflow: hidden; }
+.stat-strip::before {
+  content: ''; position: absolute; top: -60%; right: -10%; width: 420px; height: 420px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(106,61,232,0.5), transparent 70%); pointer-events: none;
+}
+.stat-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px 20px; position: relative; z-index: 2; }
+@media (min-width: 768px) { .stat-grid { grid-template-columns: repeat(4, 1fr); gap: 20px; } }
+.stat-item { text-align: left; border-left: 2px solid rgba(255,255,255,0.18); padding-left: 16px; }
+.stat-item .num { font-family: var(--font-display); font-weight: 800; font-size: clamp(24px, 4vw, 36px); }
+.stat-item .num .accent { color: var(--amber); }
+.stat-item .lbl { font-size: 12.5px; color: rgba(255,255,255,0.62); margin-top: 4px; line-height: 1.35; }
+
+/* ============================================================
+   CARDS — shared
+   ============================================================ */
+.card {
+  background: var(--white); border-radius: var(--radius-m); padding: 32px 28px;
+  box-shadow: var(--shadow-card); transition: transform 0.35s cubic-bezier(.16,.8,.3,1), box-shadow 0.35s ease;
+}
+.card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lift); }
+.icon-circle {
+  width: 54px; height: 54px; border-radius: 50%; background: var(--violet);
+  display: flex; align-items: center; justify-content: center; margin-bottom: 20px; flex-shrink: 0;
+  color: var(--white);
+}
+.icon-circle svg { width: 24px; height: 24px; }
+
+/* Value prop */
+.value-grid { display: grid; grid-template-columns: 1fr; gap: 22px; }
+@media (min-width: 720px) { .value-grid { grid-template-columns: repeat(3, 1fr); } }
+.value-grid .card:nth-child(1) { border-top: 4px solid var(--teal); }
+.value-grid .card:nth-child(2) { border-top: 4px solid var(--violet); }
+.value-grid .card:nth-child(3) { border-top: 4px solid var(--coral); }
+.value-grid .card:nth-child(1) .icon-circle { background: var(--teal); }
+.value-grid .card:nth-child(3) .icon-circle { background: var(--coral); }
+.card h3 { font-size: 19px; margin-bottom: 10px; }
+.card p { color: var(--grey); font-size: 15px; }
+
+/* Services */
+.services-section { background: var(--ink); color: var(--white); }
+.services-section .section-head p { color: rgba(255,255,255,0.65); }
+.services-section .eyebrow { color: var(--teal); }
+.services-section .eyebrow::before { background: var(--amber); }
+.services-grid { display: grid; grid-template-columns: 1fr; gap: 18px; }
+@media (min-width: 640px) { .services-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1080px) { .services-grid { grid-template-columns: repeat(5, 1fr); } }
+.service-card {
+  background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: var(--radius-m);
+  padding: 26px 22px; transition: all 0.3s ease; position: relative; overflow: hidden;
+}
+.service-card:hover { background: rgba(255,255,255,0.09); border-color: rgba(255,255,255,0.25); transform: translateY(-4px); }
+.service-card .icon-circle { width: 48px; height: 48px; }
+.service-card h3 { color: var(--white); font-size: 16.5px; margin-bottom: 8px; line-height: 1.3; }
+.service-card p { color: rgba(255,255,255,0.6); font-size: 13.5px; }
+.service-card.core { grid-column: span 1; background: linear-gradient(145deg, var(--violet), var(--violet-deep)); border-color: transparent; }
+.service-card.core .icon-circle { background: rgba(255,255,255,0.2); }
+.service-card.core p { color: rgba(255,255,255,0.85); }
+.core-badge { position: absolute; top: 16px; right: 16px; font-family: var(--font-mono); font-size: 9.5px; letter-spacing: 0.08em; background: rgba(255,255,255,0.25); padding: 4px 9px; border-radius: 20px; color: var(--white); }
+
+/* ============================================================
+   STUDIO CAROUSEL (massive auto-play image showcase)
+   ============================================================ */
+.studio-section { background: var(--paper); overflow: hidden; }
+.studio-section .container.wide-head { max-width: var(--container); }
+.marquee-wrap { position: relative; width: 100%; }
+.marquee-wrap::before, .marquee-wrap::after {
+  content: ''; position: absolute; top: 0; bottom: 0; width: 60px; z-index: 3; pointer-events: none;
+}
+.marquee-wrap::before { left: 0; background: linear-gradient(90deg, var(--paper), transparent); }
+.marquee-wrap::after { right: 0; background: linear-gradient(270deg, var(--paper), transparent); }
+@media (min-width: 900px) { .marquee-wrap::before, .marquee-wrap::after { width: 140px; } }
+
+.marquee-row { display: flex; gap: 16px; width: max-content; margin-bottom: 16px; }
+.marquee-row.row-a { animation: marquee-left 68s linear infinite; }
+.marquee-row.row-b { animation: marquee-right 74s linear infinite; }
+.marquee-wrap:hover .marquee-row { animation-play-state: paused; }
+@keyframes marquee-left { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+@keyframes marquee-right { from { transform: translateX(-50%); } to { transform: translateX(0); } }
+
+.marquee-item {
+  position: relative; flex-shrink: 0; width: 220px; height: 260px; border-radius: var(--radius-s);
+  overflow: hidden; box-shadow: 0 8px 26px -10px rgba(30,26,46,0.3);
+}
+@media (min-width: 640px) { .marquee-item { width: 270px; height: 320px; } }
+.marquee-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
+.marquee-item:hover img { transform: scale(1.08); }
+.marquee-item::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 55%, rgba(30,26,46,0.75) 100%); }
+.marquee-item .tag {
+  position: absolute; left: 14px; bottom: 12px; z-index: 2; color: var(--white);
+  font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.04em; opacity: 0.9;
+}
+.marquee-item .swatch { position: absolute; top: 12px; right: 12px; width: 10px; height: 10px; border-radius: 50%; z-index: 2; }
+
+.studio-note { max-width: 640px; margin: 40px auto 0; text-align: center; color: var(--grey); font-size: 14px; font-style: italic; }
+
+/* ============================================================
+   PROCESS
+   ============================================================ */
+.process-grid { display: grid; grid-template-columns: 1fr; gap: 16px; counter-reset: step; }
+@media (min-width: 860px) { .process-grid { grid-template-columns: repeat(4, 1fr); } }
+.process-step { position: relative; padding: 30px 24px 26px; background: var(--white); border-radius: var(--radius-m); box-shadow: var(--shadow-card); }
+.process-step .step-num {
+  font-family: var(--font-display); font-weight: 800; font-size: 42px; color: var(--violet-light);
+  -webkit-text-stroke: 1.5px var(--violet); margin-bottom: 14px; line-height: 1;
+}
+.process-step h3 { font-size: 17px; margin-bottom: 8px; }
+.process-step p { font-size: 14px; color: var(--grey); }
+.process-arrow { display: none; }
+@media (min-width: 860px) {
+  .process-grid { position: relative; }
+  .process-step:not(:last-child)::after {
+    content: '→'; position: absolute; right: -26px; top: 50%; transform: translateY(-50%);
+    color: var(--rule); font-size: 22px; font-weight: 700; z-index: 2;
+  }
+}
+
+/* ============================================================
+   CONFIDENTIALITY
+   ============================================================ */
+.confidence-section { position: relative; }
+.confidence-wrap {
+  background: linear-gradient(135deg, var(--violet) 0%, var(--violet-deep) 100%);
+  border-radius: var(--radius-l); padding: 48px 26px; color: var(--white); position: relative; overflow: hidden;
+}
+@media (min-width: 900px) { .confidence-wrap { padding: 72px 64px; } }
+.confidence-wrap::before {
+  content: ''; position: absolute; width: 380px; height: 380px; border-radius: 50%; right: -140px; top: -140px;
+  background: radial-gradient(circle, rgba(255,255,255,0.14), transparent 70%);
+}
+.confidence-head { max-width: 620px; margin-bottom: 44px; position: relative; z-index: 2; }
+.confidence-head .eyebrow { color: var(--amber); }
+.confidence-head .eyebrow::before { background: var(--white); }
+.confidence-head h2 { color: var(--white); font-size: clamp(26px, 4.5vw, 40px); }
+.confidence-grid { display: grid; grid-template-columns: 1fr; gap: 20px; position: relative; z-index: 2; }
+@media (min-width: 760px) { .confidence-grid { grid-template-columns: repeat(3, 1fr); } }
+.confidence-item { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.16); border-radius: var(--radius-m); padding: 26px 22px; backdrop-filter: blur(4px); }
+.confidence-item .icon-circle { background: rgba(255,255,255,0.22); }
+.confidence-item h3 { color: var(--white); font-size: 17px; margin-bottom: 8px; }
+.confidence-item p { color: rgba(255,255,255,0.82); font-size: 14px; }
+
+/* ============================================================
+   PRICING
+   ============================================================ */
+.pricing-grid { display: grid; grid-template-columns: 1fr; gap: 20px; }
+@media (min-width: 860px) { .pricing-grid { grid-template-columns: repeat(3, 1fr); align-items: stretch; } }
+.price-card { background: var(--white); border-radius: var(--radius-m); padding: 34px 28px; box-shadow: var(--shadow-card); display: flex; flex-direction: column; position: relative; transition: transform 0.3s ease; }
+.price-card:hover { transform: translateY(-6px); }
+.price-card.featured { background: var(--ink); color: var(--white); box-shadow: var(--shadow-lift); }
+@media (min-width: 860px) { .price-card.featured { transform: scale(1.045); } .price-card.featured:hover { transform: scale(1.045) translateY(-6px); } }
+.price-badge { position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background: var(--amber); color: var(--ink); font-family: var(--font-display); font-weight: 700; font-size: 11px; letter-spacing: 0.06em; padding: 6px 16px; border-radius: 100px; text-transform: uppercase; }
+.price-tier { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--grey); margin-bottom: 10px; }
+.price-card.featured .price-tier { color: #C9BBF7; }
+.price-amount { font-family: var(--font-display); font-weight: 800; font-size: 34px; margin-bottom: 2px; }
+.price-sub { font-size: 13px; color: var(--grey); margin-bottom: 18px; }
+.price-card.featured .price-sub { color: rgba(255,255,255,0.6); }
+.price-card ul { display: flex; flex-direction: column; gap: 11px; margin-bottom: 26px; flex-grow: 1; }
+.price-card li { display: flex; gap: 10px; font-size: 14px; align-items: flex-start; }
+.price-card li::before { content: '✓'; color: var(--teal); font-weight: 700; flex-shrink: 0; }
+.price-card.featured li::before { color: var(--amber); }
+.price-card .btn { width: 100%; }
+
+/* ============================================================
+   GROUP BACKING
+   ============================================================ */
+.group-section { display: grid; grid-template-columns: 1fr; gap: 40px; align-items: center; }
+@media (min-width: 900px) { .group-section { grid-template-columns: 1fr 1fr; gap: 60px; } }
+.group-visual { position: relative; border-radius: var(--radius-l); overflow: hidden; aspect-ratio: 4/3; }
+.group-visual img { width: 100%; height: 100%; object-fit: cover; }
+.group-visual::after { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(106,61,232,0.35), rgba(15,184,168,0.25)); mix-blend-mode: multiply; }
+.group-badge { position: absolute; bottom: 20px; left: 20px; background: var(--white); border-radius: var(--radius-m); padding: 16px 20px; box-shadow: var(--shadow-lift); z-index: 3; }
+.group-badge .num { font-family: var(--font-display); font-weight: 800; font-size: 26px; color: var(--violet); }
+.group-badge .lbl { font-size: 11.5px; color: var(--grey); }
+.group-copy h2 { font-size: clamp(26px, 4.5vw, 38px); margin-bottom: 18px; }
+.group-copy p { color: var(--grey); font-size: 16px; margin-bottom: 26px; }
+.group-list { display: flex; flex-direction: column; gap: 16px; }
+.group-list li { display: flex; gap: 14px; align-items: flex-start; }
+.group-list .dot { width: 8px; height: 8px; border-radius: 50%; margin-top: 8px; flex-shrink: 0; }
+.group-list li:nth-child(1) .dot { background: var(--coral); }
+.group-list li:nth-child(2) .dot { background: var(--teal); }
+.group-list li:nth-child(3) .dot { background: var(--amber); }
+.group-list strong { display: block; font-family: var(--font-display); font-size: 15px; margin-bottom: 2px; }
+.group-list span { font-size: 14px; color: var(--grey); }
+
+.leadership-card {
+  margin-top: 56px; display: flex; flex-direction: column; gap: 24px; align-items: flex-start;
+  background: var(--white); border-radius: var(--radius-l); padding: 32px; box-shadow: var(--shadow-card);
+}
+@media (min-width: 700px) { .leadership-card { flex-direction: row; align-items: center; padding: 40px; } }
+.leadership-avatar {
+  width: 84px; height: 84px; border-radius: 50%; flex-shrink: 0; display: flex; align-items: center; justify-content: center;
+  background: linear-gradient(135deg, var(--violet), var(--coral)); color: #fff; font-family: var(--font-display);
+  font-weight: 700; font-size: 26px; letter-spacing: 0.02em;
+}
+.leadership-copy h3 { font-size: clamp(20px, 3vw, 24px); margin-bottom: 6px; }
+.leadership-title { font-family: var(--font-display); font-weight: 600; font-size: 13.5px; color: var(--violet); margin-bottom: 14px; }
+.leadership-copy p { color: var(--grey); font-size: 15px; line-height: 1.6; margin-bottom: 0; }
+
+/* ============================================================
+   QUOTE BLOCK
+   ============================================================ */
+.quote-section { background: var(--ink); color: var(--white); text-align: center; padding: 80px 0; }
+.quote-section blockquote {
+  font-family: var(--font-display); font-weight: 700; font-size: clamp(24px, 4.6vw, 44px);
+  max-width: 900px; margin: 0 auto 24px; line-height: 1.35; letter-spacing: -0.01em;
+}
+.quote-section blockquote span { color: var(--amber); }
+.quote-section .quote-sub { color: rgba(255,255,255,0.55); font-family: var(--font-mono); font-size: 13px; letter-spacing: 0.05em; }
+
+/* ============================================================
+   CTA
+   ============================================================ */
+.cta-section { padding: 72px 0 96px; }
+.cta-wrap {
+  background: linear-gradient(120deg, var(--coral) 0%, var(--amber) 100%);
+  border-radius: var(--radius-l); padding: 56px 28px; text-align: center; position: relative; overflow: hidden;
+}
+@media (min-width: 900px) { .cta-wrap { padding: 84px 40px; } }
+.cta-wrap::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 80% 20%, rgba(255,255,255,0.25), transparent 60%); }
+.cta-wrap h2 { color: var(--white); font-size: clamp(28px, 5.5vw, 50px); max-width: 16ch; margin: 0 auto 18px; position: relative; z-index: 2; }
+.cta-wrap p { color: rgba(255,255,255,0.92); font-size: 17px; max-width: 480px; margin: 0 auto 32px; position: relative; z-index: 2; }
+.cta-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; position: relative; z-index: 2; }
+.cta-wrap .btn-primary { background: var(--ink); box-shadow: 0 14px 30px -10px rgba(0,0,0,0.4); }
+.cta-wrap .btn-primary:hover { background: var(--ink-soft); }
+.cta-wrap .btn-ghost { border-color: rgba(255,255,255,0.6); }
+
+.contact-form-card {
+  max-width: 640px; margin: 40px auto 0; background: var(--white); border-radius: var(--radius-l);
+  padding: 36px; box-shadow: var(--shadow-lift); position: relative; z-index: 2;
+}
+.form-divider { text-align: center; margin-bottom: 24px; position: relative; }
+.form-divider span { font-size: 13px; color: var(--grey); background: var(--white); padding: 0 12px; position: relative; z-index: 1; }
+.form-divider::before { content: ''; position: absolute; left: 0; right: 0; top: 50%; height: 1px; background: var(--rule); z-index: 0; }
+.form-row { display: grid; grid-template-columns: 1fr; gap: 16px; margin-bottom: 16px; }
+@media (min-width: 560px) { .form-row { grid-template-columns: 1fr 1fr; } }
+.form-field { display: flex; flex-direction: column; gap: 6px; margin-bottom: 16px; }
+.form-row .form-field { margin-bottom: 0; }
+.form-field label { font-family: var(--font-display); font-weight: 600; font-size: 13px; color: var(--ink); }
+.form-field input, .form-field select, .form-field textarea {
+  font-family: var(--font-body); font-size: 14.5px; color: var(--ink); background: var(--paper);
+  border: 1.5px solid var(--rule); border-radius: var(--radius-s); padding: 11px 14px; transition: border-color 0.2s ease;
+  width: 100%;
+}
+.form-field textarea { resize: vertical; min-height: 90px; }
+.form-field input:focus, .form-field select:focus, .form-field textarea:focus { outline: none; border-color: var(--violet); }
+.form-submit-btn { width: 100%; border: none; cursor: pointer; font-size: 15px; padding: 14px 24px; margin-top: 4px; }
+.form-status { margin-top: 14px; font-size: 13.5px; text-align: center; min-height: 0; line-height: 1.5; display: none; }
+.form-status.show { display: block; }
+.form-status.ok { color: var(--teal); }
+.form-status.err { color: var(--coral); }
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.site-footer { background: var(--ink); color: rgba(255,255,255,0.7); padding: 64px 0 28px; }
+.footer-top { display: grid; grid-template-columns: 1fr; gap: 40px; padding-bottom: 44px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+@media (min-width: 860px) { .footer-top { grid-template-columns: 1.3fr 1fr 1fr 1fr; gap: 24px; } }
+.footer-brand .brand { margin-bottom: 16px; }
+.footer-brand .brand-word { color: var(--white); }
+.footer-brand p { font-size: 14px; max-width: 320px; color: rgba(255,255,255,0.55); margin-bottom: 22px; }
+.footer-social { display: flex; gap: 10px; flex-wrap: wrap; }
+.footer-whatsapp {
+  display: inline-flex; align-items: center; gap: 9px; background: #25D366; color: #fff;
+  padding: 10px 16px; border-radius: 999px; font-family: var(--font-display); font-weight: 600;
+  font-size: 13.5px; margin-bottom: 18px; transition: all 0.25s ease; width: fit-content;
+}
+.footer-whatsapp svg { width: 18px; height: 18px; flex-shrink: 0; }
+.footer-whatsapp:hover { background: #1ebe5a; transform: translateY(-2px); }
+.footer-social a {
+  width: 38px; height: 38px; border-radius: 50%; background: rgba(255,255,255,0.08);
+  display: flex; align-items: center; justify-content: center; transition: all 0.25s ease;
+}
+.footer-social a:hover { background: var(--violet); transform: translateY(-3px); }
+.footer-social svg { width: 16px; height: 16px; }
+.footer-col h4 { font-family: var(--font-display); font-size: 13.5px; letter-spacing: 0.04em; color: var(--white); margin-bottom: 18px; text-transform: uppercase; }
+.footer-sub-label { font-family: var(--font-display); font-size: 11.5px; letter-spacing: 0.05em; color: rgba(255,255,255,0.4); margin: 20px 0 12px; text-transform: uppercase; }
+.footer-col ul { display: flex; flex-direction: column; gap: 12px; }
+.footer-col a, .footer-col span { font-size: 14.5px; color: rgba(255,255,255,0.6); transition: color 0.2s ease; }
+.footer-col a:hover { color: var(--white); }
+.footer-bottom { display: flex; flex-direction: column; gap: 14px; padding-top: 26px; font-size: 13px; color: rgba(255,255,255,0.45); }
+@media (min-width: 700px) { .footer-bottom { flex-direction: row; justify-content: space-between; align-items: center; } }
+.footer-bottom .legal-links { display: flex; gap: 20px; }
+
+.cookie-banner {
+  position: fixed; left: 16px; right: 16px; bottom: -140px; z-index: 999;
+  max-width: 760px; margin: 0 auto; background: var(--ink); color: rgba(255,255,255,0.85);
+  border-radius: var(--radius-m); box-shadow: var(--shadow-lift); padding: 20px 24px;
+  transition: bottom 0.4s ease;
+}
+.cookie-banner.is-visible { bottom: 20px; }
+.cookie-banner-inner { display: flex; flex-direction: column; gap: 14px; }
+@media (min-width: 640px) { .cookie-banner-inner { flex-direction: row; align-items: center; justify-content: space-between; gap: 24px; } }
+.cookie-banner p { font-size: 13.5px; line-height: 1.5; margin: 0; color: rgba(255,255,255,0.75); }
+.cookie-banner a { color: var(--white); text-decoration: underline; }
+.cookie-banner-actions { display: flex; gap: 10px; flex-shrink: 0; }
+.btn-primary-sm, .btn-ghost-sm {
+  font-family: var(--font-display); font-weight: 600; font-size: 13px; padding: 9px 18px;
+  border-radius: 999px; cursor: pointer; border: none; transition: all 0.2s ease; white-space: nowrap;
+}
+.btn-primary-sm { background: var(--violet); color: #fff; }
+.btn-primary-sm:hover { background: var(--violet-deep); }
+.btn-ghost-sm { background: transparent; border: 1.5px solid rgba(255,255,255,0.3); color: #fff; }
+.btn-ghost-sm:hover { background: rgba(255,255,255,0.08); }
+.footer-bottom a:hover { color: rgba(255,255,255,0.75); }
+
+/* ============================================================
+   UTILITIES
+   ============================================================ */
+.skip-link {
+  position: absolute; left: -999px; top: 0; background: var(--amber); color: var(--ink);
+  padding: 12px 20px; z-index: 2000; font-weight: 700; border-radius: 0 0 8px 0;
+}
+.skip-link:focus { left: 0; }
+:focus-visible { outline: 3px solid var(--amber); outline-offset: 2px; }
+</style>
+<!-- Cloudflare Web Analytics — cookie-free, no consent banner interaction needed -->
+<script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "1e4918d10bf945f88585852e5aab3a10"}'></script>
+<!-- End Cloudflare Web Analytics -->
+</head>
+<body>
+<a href="#main" class="skip-link">Skip to content</a>
+
+<!-- ============ HEADER ============ -->
+<header class="site-header" id="siteHeader">
+  <div class="container">
+    <a href="#main" class="brand" aria-label="Palette Canvas home">
+      <svg class="brand-mark" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect x="7" y="7" width="86" height="86" rx="20" stroke="currentColor" stroke-width="6"/>
+        <circle cx="29" cy="73" r="12" fill="#FBFAFE" stroke="currentColor" stroke-width="6"/>
+        <circle cx="64" cy="31" r="7" fill="#F0574B"/>
+        <circle cx="80" cy="46" r="7" fill="#F5A623"/>
+        <circle cx="75" cy="66" r="7" fill="#0FB8A8"/>
+        <circle cx="55" cy="52" r="7" fill="#6A3DE8"/>
+      </svg>
+      <span class="brand-word">Palette Canvas</span>
+    </a>
+    <nav class="main-nav" aria-label="Primary">
+      <a href="#services">Services</a>
+      <a href="#studio">Studio</a>
+      <a href="#process">Process</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#group">About</a>
+      <a href="careers.html">Careers</a>
+    </nav>
+    <div style="display:flex; align-items:center; gap:12px;">
+      <a href="#contact" class="btn btn-primary header-cta">Start a Conversation</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ============ MOBILE NAV ============ -->
+<div class="mobile-nav" id="mobileNav">
+  <button class="mobile-close" id="mobileClose" aria-label="Close menu">&times;</button>
+  <a href="#services">Services</a>
+  <a href="#studio">Studio</a>
+  <a href="#process">Process</a>
+  <a href="#pricing">Pricing</a>
+  <a href="#group">About</a>
+  <a href="careers.html">Careers</a>
+  <a href="#contact" class="btn btn-primary">Start a Conversation</a>
+</div>
+
+<main id="main">
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="hero">
+  <div class="hero-slides" id="heroSlides">
+    <div class="hero-slide is-active" style="background-image:url('https://images.unsplash.com/photo-1725347740938-73127ed5d91c?auto=format&fit=crop&w=1800&q=80')"></div>
+    <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?auto=format&fit=crop&w=1800&q=80')"></div>
+    <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1699060463533-94ceb428c67f?auto=format&fit=crop&w=1800&q=80')"></div>
+    <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1732032506091-6fd57cc3113e?auto=format&fit=crop&w=1800&q=80')"></div>
+    <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=1800&q=80')"></div>
+    <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1716471330463-f475b00f0506?auto=format&fit=crop&w=1800&q=80')"></div>
+  </div>
+
+  <div class="hero-content">
+    <div class="container">
+      <div class="hero-tag">
+        <div class="dots-row" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+        <span class="label">A Specialised Operating Division of BESBPO Group</span>
+      </div>
+      <h1>Extra creative capacity. <em>Under your name.</em></h1>
+      <p class="lede">Palette Canvas is a white-label design, branding, and multimedia production team that plugs into agencies as capacity — invisible when you don't need us, ready the moment you do.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn btn-primary">Start a Conversation</a>
+        <a href="#services" class="btn btn-ghost">See Our Capability</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-scroll-cue" aria-hidden="true"><div class="line"></div><span style="font-family:var(--font-mono); font-size:10px; letter-spacing:0.1em;">SCROLL</span></div>
+
+  <div class="hero-nav">
+    <div class="hero-dots" id="heroDots"></div>
+    <button class="hero-arrow" id="heroPrev" aria-label="Previous slide">&#8592;</button>
+    <button class="hero-arrow" id="heroNext" aria-label="Next slide">&#8594;</button>
+  </div>
+</section>
+
+<!-- ============ STAT STRIP ============ -->
+<section class="stat-strip">
+  <div class="container">
+    <div class="stat-grid">
+      <div class="stat-item"><div class="num"><span class="accent">R35</span>bn</div><div class="lbl">South African BPO sector, our home market</div></div>
+      <div class="stat-item"><div class="num">137.1<span class="accent">hrs</span></div><div class="lbl">Real productive hours per seat, benchmarked not guessed</div></div>
+      <div class="stat-item"><div class="num">12<span class="accent">:1</span></div><div class="lbl">Seats per Account/Production Manager</div></div>
+      <div class="stat-item"><div class="num"><span class="accent">Zero</span></div><div class="lbl">Attribution in anything we deliver</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ VALUE PROP ============ -->
+<section class="section" id="value">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow">The Model</div>
+      <h2>Capacity, not competition</h2>
+      <p>Every engagement runs on the same three disciplines — so your client's brand never carries the risk of an unreliable subcontractor.</p>
+    </div>
+    <div class="value-grid reveal-stagger">
+      <div class="card">
+        <div class="icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12l10 5 10-5M2 7l10 5 10-5-10-5z"/></svg></div>
+        <h3>Zero attribution</h3>
+        <p>No branding, watermark, or file metadata in anything you receive — every asset ships ready to go out under your own name.</p>
+      </div>
+      <div class="card">
+        <div class="icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6l8-4z"/></svg></div>
+        <h3>Confidentiality by design</h3>
+        <p>Your End-Client's identity is never solicited, and a dedicated Confidentiality Addendum governs every engagement — not a verbal promise.</p>
+      </div>
+      <div class="card">
+        <div class="icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M18.5 8.5l-5 5-3-3-4 4"/></svg></div>
+        <h3>Benchmarked delivery</h3>
+        <p>Every quote traces to sourced production-time data — a repeatable, defensible model, not a rough estimate dressed up as a promise.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section class="section services-section" id="services">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow">What We Produce</div>
+      <h2>Five ways we plug into your workflow</h2>
+      <p>From ongoing embedded capacity to defined-scope projects — priced and benchmarked the same way, every time.</p>
+    </div>
+    <div class="services-grid reveal-stagger">
+      <div class="service-card">
+        <div class="icon-circle" style="background:var(--coral);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="9" cy="10" r="1.3" fill="currentColor"/><circle cx="14" cy="9" r="1.3" fill="currentColor"/><circle cx="16" cy="13" r="1.3" fill="currentColor"/><path d="M9 15a3 3 0 003 3c1 0 1-1 2-1h1a2 2 0 002-2 8 8 0 10-8 0"/></svg></div>
+        <h3>Graphic Design &amp; Branding</h3>
+        <p>Ongoing, at-scale design output — brand assets through to campaign-specific work.</p>
+      </div>
+      <div class="service-card">
+        <div class="icon-circle" style="background:var(--amber-deep);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="15" height="14" rx="2"/><path d="M17 9l5-3v12l-5-3"/></svg></div>
+        <h3>Multimedia &amp; Video</h3>
+        <p>Video editing, motion graphics, and multimedia content for marketing and social.</p>
+      </div>
+      <div class="service-card">
+        <div class="icon-circle" style="background:var(--teal);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="6" cy="12" r="2.6"/><circle cx="18" cy="6" r="2.6"/><circle cx="18" cy="18" r="2.6"/><path d="M8.3 10.7l7.4-3.4M8.3 13.3l7.4 3.4"/></svg></div>
+        <h3>Digital &amp; Social Content</h3>
+        <p>High-volume, platform-specific creative for social, digital advertising, and e-commerce.</p>
+      </div>
+      <div class="service-card core">
+        <span class="core-badge">CORE MODEL</span>
+        <div class="icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="8" r="3.2"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><circle cx="17" cy="8" r="2.6"/><path d="M15.5 6.2A2.6 2.6 0 0121 8"/><path d="M15 14.2c2.8.4 5 2.8 5 5.8"/></svg></div>
+        <h3>Dedicated Creative Teams</h3>
+        <p>Ongoing creative staff embedded in your workflow on a retainer or seat basis.</p>
+      </div>
+      <div class="service-card">
+        <div class="icon-circle" style="background:var(--violet);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 012-2h4a2 2 0 012 2v2"/></svg></div>
+        <h3>Project-Based Production</h3>
+        <p>Defined-scope creative projects, delivered on a fixed basis for episodic needs.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STUDIO CAROUSEL ============ -->
+<section class="section studio-section" id="studio">
+  <div class="container wide-head">
+    <div class="section-head center reveal" style="margin-left:auto;margin-right:auto;">
+      <div class="eyebrow">Inside The Studio</div>
+      <h2>The craft behind every deliverable</h2>
+      <p>A look at the process, tools, and energy of a production team that benchmarks its own output rather than guessing at it.</p>
+    </div>
+  </div>
+
+  <div class="marquee-wrap reveal">
+    <div class="marquee-row row-a" id="marqueeA"></div>
+    <div class="marquee-row row-b" id="marqueeB"></div>
+  </div>
+
+  <div class="container">
+    <p class="studio-note">These images reflect the creative process and working environment, not a client portfolio — Palette Canvas produces every deliverable white-label, so finished client work is never shown here. See the <a href="#pricing" style="color:var(--violet); font-weight:600;">Rate Card</a> for the benchmarked output behind it.</p>
+  </div>
+</section>
+
+<!-- ============ PROCESS ============ -->
+<section class="section" id="process">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow">The Process</div>
+      <h2>Four steps, every time</h2>
+      <p>The same production discipline whether it's a single social graphic or a full campaign.</p>
+    </div>
+    <div class="process-grid reveal-stagger">
+      <div class="process-step">
+        <div class="step-num">01</div>
+        <h3>Brief</h3>
+        <p>A short Creative Brief &amp; Brand Snapshot — what you need, your brand standards, your deadline.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">02</div>
+        <h3>Production</h3>
+        <p>Benchmarked hours, a dedicated team, two revision rounds built into every deliverable.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">03</div>
+        <h3>QA</h3>
+        <p>A three-part check — brand consistency, brief compliance, technical accuracy — before anything ships.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">04</div>
+        <h3>Delivered</h3>
+        <p>Metadata-stripped, white-label, ready to hand straight to your client.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONFIDENTIALITY ============ -->
+<section class="section" id="confidence">
+  <div class="container">
+    <div class="confidence-wrap reveal">
+      <div class="confidence-head">
+        <div class="eyebrow">The Objection You're Already Thinking</div>
+        <h2>Confidentiality isn't just a promise</h2>
+      </div>
+      <div class="confidence-grid reveal-stagger">
+        <div class="confidence-item">
+          <div class="icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 018 0v3"/></svg></div>
+          <h3>Zero attribution</h3>
+          <p>No branding, watermark, or file metadata in anything you receive.</p>
+        </div>
+        <div class="confidence-item">
+          <div class="icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6l8-4z"/></svg></div>
+          <h3>Your client, untouched</h3>
+          <p>We never contact or even learn your client's identity unless you choose to loop us in.</p>
+        </div>
+        <div class="confidence-item">
+          <div class="icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4l5 16 2.5-6.5L18 11 4 4z"/></svg></div>
+          <h3>Written in from day one</h3>
+          <p>A dedicated White-Label &amp; Confidentiality Addendum, not a verbal assurance.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRICING ============ -->
+<section class="section" id="pricing">
+  <div class="container">
+    <div class="section-head center reveal" style="margin-left:auto;margin-right:auto;">
+      <div class="eyebrow">The Investment</div>
+      <h2>Three tiers, priced per seat</h2>
+      <p>Every figure traces to the same benchmarked capacity model — nothing here is a rough estimate.</p>
+    </div>
+    <div class="pricing-grid reveal-stagger">
+      <div class="price-card">
+        <div class="price-tier" style="color:var(--teal);">Base</div>
+        <div class="price-amount">R18,946</div>
+        <div class="price-sub">per seat / month</div>
+        <ul>
+          <li>23.7% cheaper than an in-house mid-level hire</li>
+          <li>Full production discipline included</li>
+          <li>Best for steady, predictable output</li>
+        </ul>
+        <a href="#contact" class="btn btn-dark">Talk to us</a>
+      </div>
+      <div class="price-card featured">
+        <span class="price-badge">Most Common</span>
+        <div class="price-tier">Standard</div>
+        <div class="price-amount">R34,013</div>
+        <div class="price-sub">per seat / month</div>
+        <ul>
+          <li>8.4% cheaper than an in-house senior hire</li>
+          <li>Weekend capacity available as an add-on</li>
+          <li>Best for senior-level consistency</li>
+        </ul>
+        <a href="#contact" class="btn btn-primary">Talk to us</a>
+      </div>
+      <div class="price-card">
+        <div class="price-tier" style="color:var(--amber-deep);">Premium</div>
+        <div class="price-amount">R61,090</div>
+        <div class="price-sub">per seat / month</div>
+        <ul>
+          <li>Full embedded capability</li>
+          <li>Weekend capacity included as standard</li>
+          <li>Best for sustained high volume</li>
+        </ul>
+        <a href="#contact" class="btn btn-dark">Talk to us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GROUP BACKING ============ -->
+<section class="section" id="group">
+  <div class="container">
+    <div class="group-section">
+      <div class="group-visual reveal">
+        <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1000&q=80" alt="Team collaborating in a creative studio" loading="lazy">
+        <div class="group-badge"><div class="num">18+</div><div class="lbl">Sister divisions</div></div>
+      </div>
+      <div class="group-copy reveal">
+        <div class="eyebrow">Group Backing</div>
+        <h2>Backed, not standalone</h2>
+        <p>Palette Canvas is a specialised operating division of BESBPO Group — a South African conglomerate spanning Built Environment, Real Estate, BPO, Logistics, Consultancy, and Security. We're not a freelancer building a business alone.</p>
+        <ul class="group-list">
+          <li><span class="dot"></span><div><strong>Shared infrastructure</strong><span>Identity, access management, and cloud infrastructure inherited from Group-level investment.</span></div></li>
+          <li><span class="dot"></span><div><strong>Sibling division referrals</strong><span>A formal referral partnership with BEMS, the Group's brand strategy division.</span></div></li>
+          <li><span class="dot"></span><div><strong>Real financial backing</strong><span>An established pattern of DFI and commercial banking engagement across the Group.</span></div></li>
+        </ul>
+      </div>
+    </div>
+    <div class="leadership-card reveal">
+      <div class="leadership-avatar" aria-hidden="true">FN</div>
+      <div class="leadership-copy">
+        <div class="eyebrow">Leadership</div>
+        <h3>Fortune Thabo Ndaba</h3>
+        <div class="leadership-title">Founder, Chairman &amp; Group CEO, Chief Technology Officer — BESBPO Group</div>
+        <p>Fortune founded BESBPO Group and leads it in a dual capacity: as Chairman and Group CEO, setting strategic direction across every division; as Chief Technology Officer, architecting the shared technology infrastructure — identity, cloud systems, and the best-in-class tool stack — that Palette Canvas and every sister division are built on. That combination means the Group's technology decisions and its business direction come from the same place, not two departments negotiating with each other.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ QUOTE ============ -->
+<section class="quote-section">
+  <div class="container">
+    <blockquote class="reveal">"Everything we produce ships under <span>your</span> name. No attribution, no watermark, no mention of us — ever."</blockquote>
+    <div class="quote-sub">THE PALETTE CANVAS WHITE-LABEL STANDARD</div>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section class="section cta-section" id="contact">
+  <div class="container">
+    <div class="cta-wrap reveal">
+      <h2>Let's talk capacity.</h2>
+      <p>15 minutes to see if this is useful for your next pitch, campaign, or capacity crunch.</p>
+      <div class="cta-actions">
+        <a href="mailto:info@palettecanvas.besbpo.co.za" class="btn btn-primary">info@palettecanvas.besbpo.co.za</a>
+        <a href="https://wa.me/27683676276" target="_blank" rel="noopener" class="btn btn-ghost">WhatsApp Us</a>
+        <a href="tel:+27872652505" class="btn btn-ghost">087 265 2505</a>
+      </div>
+    </div>
+
+    <div class="contact-form-card reveal">
+      <div class="form-divider"><span>or send us an enquiry directly</span></div>
+      <form id="contactForm" novalidate>
+        <div class="form-row">
+          <div class="form-field">
+            <label for="f-name">Name*</label>
+            <input type="text" id="f-name" name="name" required autocomplete="name">
+          </div>
+          <div class="form-field">
+            <label for="f-email">Email*</label>
+            <input type="email" id="f-email" name="email" required autocomplete="email">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-field">
+            <label for="f-company">Agency / Company</label>
+            <input type="text" id="f-company" name="company" autocomplete="organization">
+          </div>
+          <div class="form-field">
+            <label for="f-tier">Tier of interest</label>
+            <select id="f-tier" name="tier">
+              <option value="Not sure yet">Not sure yet</option>
+              <option value="Base">Base</option>
+              <option value="Standard">Standard</option>
+              <option value="Premium">Premium</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-field">
+          <label for="f-message">What do you need?*</label>
+          <textarea id="f-message" name="message" rows="4" required placeholder="Tell us about the capacity, campaign, or deliverable you have in mind."></textarea>
+        </div>
+        <button type="submit" id="formSubmit" class="btn btn-primary form-submit-btn">Send Enquiry</button>
+        <div id="formStatus" class="form-status" role="status" aria-live="polite"></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="#main" class="brand" aria-label="Palette Canvas home">
+          <svg class="brand-mark" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="7" y="7" width="86" height="86" rx="20" stroke="#FBFAFE" stroke-width="6"/>
+            <circle cx="29" cy="73" r="12" fill="#1E1A2E" stroke="#FBFAFE" stroke-width="6"/>
+            <circle cx="64" cy="31" r="7" fill="#F0574B"/>
+            <circle cx="80" cy="46" r="7" fill="#F5A623"/>
+            <circle cx="75" cy="66" r="7" fill="#0FB8A8"/>
+            <circle cx="55" cy="52" r="7" fill="#6A3DE8"/>
+          </svg>
+          <span class="brand-word">Palette Canvas</span>
+        </a>
+        <p>White-label creative &amp; multimedia production for design, branding, and multimedia agencies — a specialised operating division of BESBPO Group (Pty) Ltd.</p>
+        <a href="https://wa.me/27683676276" target="_blank" rel="noopener" class="footer-whatsapp" aria-label="Chat with us on WhatsApp">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5.1-1.3A10 10 0 1012 2zm0 18.2a8.2 8.2 0 01-4.2-1.15l-.3-.18-3.1.8.83-3-.2-.32A8.2 8.2 0 1112 20.2zm4.5-6.15c-.25-.12-1.45-.72-1.67-.8-.22-.08-.39-.12-.55.12-.16.25-.63.8-.78.96-.14.16-.29.18-.53.06-.25-.12-1.04-.38-1.98-1.22-.73-.65-1.23-1.46-1.37-1.7-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.15.16-.25.25-.42.08-.16.04-.31-.02-.43-.06-.12-.55-1.33-.76-1.82-.2-.48-.4-.41-.55-.42h-.47c-.16 0-.42.06-.64.31-.22.25-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.7 2.6 4.13 3.64.58.25 1.03.4 1.38.51.58.18 1.11.16 1.53.1.47-.07 1.45-.59 1.65-1.16.2-.57.2-1.06.14-1.16-.06-.1-.22-.16-.47-.28z"/></svg>
+          <span>Chat on WhatsApp</span>
+        </a>
+        <div class="footer-social" aria-label="Social media">
+          <a href="https://x.com/BesbpoGroup" target="_blank" rel="noopener" aria-label="X (Twitter)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 2H22l-7.6 8.7L23 22h-6.9l-5.4-6.6L4.5 22H1.4l8.1-9.3L1 2h7l4.9 6L18.9 2zm-1.2 18h1.9L7.4 4H5.4l12.3 16z"/></svg></a>
+          <a href="https://www.threads.net/@besbpo_group" target="_blank" rel="noopener" aria-label="Threads"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 21c4.5 0 7-2.5 7-7.5S16.5 4 12 4 6 6.5 6 10c0 2.5 1.8 4 4.2 4 2 0 3.3-1.1 3.3-2.7 0-1.2-.8-2-2-2-.9 0-1.5.5-1.5 1.3"/></svg></a>
+          <a href="https://www.instagram.com/besbpo_group" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
+          <a href="https://www.tiktok.com/@besbpo.group" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.5 3c.3 2.2 1.7 3.7 4 4v2.9c-1.5 0-2.8-.4-4-1.2v6.6a5.7 5.7 0 11-5.7-5.7c.2 0 .4 0 .7.03v2.9a2.8 2.8 0 102.8 2.8V3h2.2z"/></svg></a>
+          <a href="https://www.facebook.com/share/1HgNpvXCRd/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-7.5H16l.4-3H13.5V8.4c0-.87.24-1.46 1.5-1.46h1.6V4.3c-.28-.04-1.23-.12-2.34-.12-2.32 0-3.9 1.42-3.9 4V10.5H8v3h2.36V21h3.14z"/></svg></a>
+          <a href="https://www.linkedin.com/company/besbpo-group" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 11-.02 5 2.5 2.5 0 01.02-5zM3 9h4v12H3V9zm7 0h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.6c0-1.35-.02-3.08-1.88-3.08-1.88 0-2.17 1.47-2.17 2.98V21h-4V9z"/></svg></a>
+          <a href="https://www.youtube.com/@BesbpoGroup" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="5" width="20" height="14" rx="4"/><path d="M10 9l5 3-5 3V9z" fill="currentColor" stroke="none"/></svg></a>
+          <a href="https://www.behance.net/besbpogroup" target="_blank" rel="noopener" aria-label="Behance"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4 5h6.2c2.1 0 3.4 1 3.4 2.8 0 1.2-.6 2-1.7 2.4 1.4.4 2.2 1.4 2.2 2.9 0 2.1-1.6 3.2-4 3.2H4V5zm2.3 4.4h3.5c1 0 1.6-.5 1.6-1.3s-.6-1.3-1.6-1.3H6.3v2.6zm0 4.9h3.8c1.1 0 1.8-.5 1.8-1.4s-.7-1.4-1.8-1.4H6.3v2.8zM14.5 7h5v1.4h-5V7zm2.7 2.3c2.4 0 4 1.7 4 4.1 0 .2 0 .4-.03.6h-6.1c.2 1.1 1 1.7 2.2 1.7.9 0 1.6-.3 2-.9l1.6.8c-.7 1.2-2 1.9-3.7 1.9-2.6 0-4.4-1.7-4.4-4.1 0-2.4 1.7-4.1 4.05-4.1zm-1.98 3.3h3.9c-.15-1-.9-1.6-1.9-1.6-1.05 0-1.8.6-2 1.6z"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#studio">Studio</a></li>
+          <li><a href="#process">Process</a></li>
+          <li><a href="#group">About BESBPO Group</a></li>
+          <li><a href="capability-deck.html">Capability Deck</a></li>
+          <li><a href="careers.html">Careers</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Pricing</h4>
+        <ul>
+          <li><a href="#pricing">Base tier</a></li>
+          <li><a href="#pricing">Standard tier</a></li>
+          <li><a href="#pricing">Premium tier</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:info@palettecanvas.besbpo.co.za">info@palettecanvas.besbpo.co.za</a></li>
+          <li><a href="mailto:partners@besbpo.co.za">partners@besbpo.co.za</a></li>
+          <li><a href="tel:+27872652505">087 265 2505</a></li>
+        </ul>
+        <div class="footer-sub-label">Call locally</div>
+        <ul>
+          <li><a href="tel:+27100166071">Johannesburg — 010 016 6071</a></li>
+          <li><a href="tel:+27210613355">Cape Town — 021 061 3355</a></li>
+          <li><a href="tel:+27310245520">Durban — 031 024 5520</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span id="year"></span> Palette Canvas — A Specialised Operating Division of BESBPO Group (Pty) Ltd. All rights reserved.</span>
+      <div class="legal-links">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
+        <a href="#" id="cookie-settings-link">Cookie Settings</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  'use strict';
+
+  /* ---------- Footer year ---------- */
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  /* ---------- Mobile nav ---------- */
+  var navToggle = document.getElementById('navToggle');
+  var mobileNav = document.getElementById('mobileNav');
+  var mobileClose = document.getElementById('mobileClose');
+  function openNav() { mobileNav.classList.add('is-open'); navToggle.setAttribute('aria-expanded', 'true'); document.body.style.overflow = 'hidden'; }
+  function closeNav() { mobileNav.classList.remove('is-open'); navToggle.setAttribute('aria-expanded', 'false'); document.body.style.overflow = ''; }
+  navToggle.addEventListener('click', openNav);
+  mobileClose.addEventListener('click', closeNav);
+  mobileNav.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', closeNav); });
+
+  /* ---------- Header scroll state ---------- */
+  var header = document.getElementById('siteHeader');
+  function onScroll() {
+    if (window.scrollY > 40) header.classList.add('is-scrolled');
+    else header.classList.remove('is-scrolled');
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  /* ---------- Hero slider ---------- */
+  var slides = Array.prototype.slice.call(document.querySelectorAll('.hero-slide'));
+  var dotsWrap = document.getElementById('heroDots');
+  var current = 0;
+  var heroTimer;
+
+  slides.forEach(function (_, i) {
+    var b = document.createElement('button');
+    b.setAttribute('aria-label', 'Go to slide ' + (i + 1));
+    if (i === 0) b.classList.add('is-active');
+    b.addEventListener('click', function () { goTo(i); restart(); });
+    dotsWrap.appendChild(b);
+  });
+  var dotEls = Array.prototype.slice.call(dotsWrap.children);
+
+  function goTo(index) {
+    slides[current].classList.remove('is-active');
+    dotEls[current].classList.remove('is-active');
+    current = (index + slides.length) % slides.length;
+    slides[current].classList.add('is-active');
+    dotEls[current].classList.add('is-active');
+  }
+  function next() { goTo(current + 1); }
+  function prev() { goTo(current - 1); }
+  function restart() { clearInterval(heroTimer); heroTimer = setInterval(next, 5500); }
+
+  document.getElementById('heroNext').addEventListener('click', function () { next(); restart(); });
+  document.getElementById('heroPrev').addEventListener('click', function () { prev(); restart(); });
+  restart();
+
+  /* ---------- Studio marquee (20+ images, two auto-play rows) ---------- */
+  var studioImages = [
+    { id: '1626785774573-4b799315345d', tag: 'Brand Application' },
+    { id: '1626785774625-ddcddc3445e9', tag: 'Screen Test' },
+    { id: '1561070791-2526d30994b5', tag: 'Colour System' },
+    { id: '1572044162444-ad60f128bdea', tag: 'Layout Draft' },
+    { id: '1519408469771-2586093c3f14', tag: 'Dual Monitor Flow' },
+    { id: '1658863025658-4a259cc68fc9', tag: 'Print Proof' },
+    { id: '1534670007418-fbb7f6cf32c3', tag: 'Strategy Notes' },
+    { id: '1506097425191-7ad538b29cef', tag: 'Brand Library' },
+    { id: '1558655146-9f40138edfeb', tag: 'Sketch Pass' },
+    { id: '1713616147761-c126f8009c6f', tag: 'Line Work' },
+    { id: '1620912189868-30778f884588', tag: 'Concept Review' },
+    { id: '1561070791-36c11767b26a', tag: 'Colour Grade' },
+    { id: '1628494391268-c9935bc384d5', tag: 'Studio Setup' },
+    { id: '1501780392773-287d506245a5', tag: 'Render Queue' },
+    { id: '1544380904-c686aad2fc40', tag: 'Motion Draft' },
+    { id: '1669647561467-891414e9b140', tag: 'Pattern Study' },
+    { id: '1719274426941-bdc72e985c71', tag: 'Colour Study' },
+    { id: '1676238560626-45d35b63b38f', tag: 'Final Polish' },
+    { id: '1649575207563-0314a0cd0398', tag: 'Team Sync' },
+    { id: '1582213782179-e0d53f98f2ca', tag: 'Studio Break' },
+    { id: '1543269865-cbf427effbad', tag: 'Client Review' },
+    { id: '1583321500900-82807e458f3c', tag: 'Design Session' },
+    { id: '1603201667141-5a2d4c673378', tag: 'Team Huddle' },
+    { id: '1557804506-669a67965ba0', tag: 'Whiteboard Session' }
+  ];
+  var swatches = ['#F0574B', '#F5A623', '#0FB8A8', '#6A3DE8'];
+
+  function buildRow(el, items) {
+    var html = '';
+    // duplicate the set twice so translateX(-50%) loops seamlessly
+    for (var pass = 0; pass < 2; pass++) {
+      items.forEach(function (item, i) {
+        var src = 'https://images.unsplash.com/photo-' + item.id + '?auto=format&fit=crop&w=600&h=700&q=75';
+        html += '<div class="marquee-item">' +
+          '<img src="' + src + '" alt="' + item.tag + ' at Palette Canvas" loading="lazy">' +
+          '<span class="swatch" style="background:' + swatches[i % swatches.length] + '"></span>' +
+          '<span class="tag">' + item.tag + '</span>' +
+        '</div>';
+      });
+    }
+    el.innerHTML = html;
+  }
+
+  var half = Math.ceil(studioImages.length / 2);
+  buildRow(document.getElementById('marqueeA'), studioImages.slice(0, half));
+  buildRow(document.getElementById('marqueeB'), studioImages.slice(half));
+
+  /* ---------- Scroll reveal ---------- */
+  var revealEls = document.querySelectorAll('.reveal, .reveal-stagger');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
+    revealEls.forEach(function (el) { io.observe(el); });
+    // Safety net: force-reveal anything still hidden after 4s, in case an
+    // edge case (extension interference, layout quirk) stops the observer firing.
+    setTimeout(function () {
+      revealEls.forEach(function (el) { el.classList.add('is-visible'); });
+    }, 4000);
+  } else {
+    revealEls.forEach(function (el) { el.classList.add('is-visible'); });
+  }
+})();
+</script>
+
+<div class="cookie-banner" id="cookie-banner" role="dialog" aria-live="polite" aria-label="Cookie consent">
+  <div class="cookie-banner-inner">
+    <p>We use cookies to understand how this site is used and to improve it. See our <a href="privacy.html">Privacy Policy</a> for details.</p>
+    <div class="cookie-banner-actions">
+      <button type="button" id="cookie-decline" class="btn btn-ghost-sm">Necessary Only</button>
+      <button type="button" id="cookie-accept" class="btn btn-primary-sm">Accept</button>
+    </div>
+  </div>
+</div>
+
+<script>
+/* Contact form — Formspree with mailto fallback */
+(function () {
+  var form = document.getElementById('contactForm');
+  if (!form) return;
+  var FORMSPREE_ENDPOINT = 'https://formspree.io/f/mppakado';
+  var RECIPIENT = 'info@palettecanvas.besbpo.co.za';
+
+  function sendViaMailto(payload) {
+    var subject = encodeURIComponent('Website Enquiry — ' + payload.tier + ' — ' + payload.name);
+    var body = encodeURIComponent(
+      'Name: ' + payload.name + '\n' +
+      'Email: ' + payload.email + '\n' +
+      'Agency/Company: ' + payload.company + '\n' +
+      'Tier of interest: ' + payload.tier + '\n\n' +
+      payload.message
+    );
+    window.location.href = 'mailto:' + RECIPIENT + '?subject=' + subject + '&body=' + body;
+  }
+
+  form.addEventListener('submit', async function (e) {
+    e.preventDefault();
+
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
+
+    var status = document.getElementById('formStatus');
+    var btn = document.getElementById('formSubmit');
+    var payload = {
+      name: document.getElementById('f-name').value,
+      email: document.getElementById('f-email').value,
+      company: document.getElementById('f-company').value,
+      tier: document.getElementById('f-tier').value,
+      message: document.getElementById('f-message').value
+    };
+
+    var originalBtnText = btn.textContent;
+    btn.textContent = 'Sending…';
+    btn.disabled = true;
+
+    try {
+      var res = await fetch(FORMSPREE_ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({
+          name: payload.name,
+          email: payload.email,
+          company: payload.company,
+          tier: payload.tier,
+          message: payload.message,
+          _subject: 'Website Enquiry — ' + payload.tier + ' — ' + payload.name
+        })
+      });
+      if (!res.ok) throw new Error('Request failed');
+      status.textContent = 'Message sent — we will be in touch shortly.';
+      status.className = 'form-status show ok';
+      form.reset();
+    } catch (err) {
+      sendViaMailto(payload);
+      status.textContent = 'In-page sending failed, so we opened your email client instead — please hit send there.';
+      status.className = 'form-status show err';
+    } finally {
+      btn.textContent = originalBtnText;
+      btn.disabled = false;
+    }
+  });
+})();
+
+/* Cookie consent — placed after the banner markup so the element exists when this runs */
+(function () {
+  var KEY = 'pc_cookie_consent';
+  var banner = document.getElementById('cookie-banner');
+  if (!banner) return;
+  var stored;
+  try { stored = localStorage.getItem(KEY); } catch (e) { stored = null; }
+  if (!stored) {
+    setTimeout(function () { banner.classList.add('is-visible'); }, 600);
+  }
+  function setConsent(value) {
+    try { localStorage.setItem(KEY, value); } catch (e) {}
+    banner.classList.remove('is-visible');
+  }
+  var acceptBtn = document.getElementById('cookie-accept');
+  var declineBtn = document.getElementById('cookie-decline');
+  if (acceptBtn) acceptBtn.addEventListener('click', function () { setConsent('accepted'); });
+  if (declineBtn) declineBtn.addEventListener('click', function () { setConsent('declined'); });
+
+  var settingsLink = document.getElementById('cookie-settings-link');
+  if (settingsLink) settingsLink.addEventListener('click', function (e) {
+    e.preventDefault();
+    banner.classList.add('is-visible');
+  });
+})();
+</script>
+</body>
+</html>
